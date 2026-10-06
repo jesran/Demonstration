@@ -1,0 +1,42 @@
+<svg width="800" height="1066" viewBox="0 0 800 1066" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Warm luxury studio ambient wash -->
+    <radialGradient id="studio-bg-core-zip-hoodie-3" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#FAF8F5" />
+      <stop offset="65%" stop-color="#F2EDE4" />
+      <stop offset="100%" stop-color="#E9E2D6" />
+    </radialGradient>
+    <!-- Soft luxury floor shadow -->
+    <filter id="soft-ground-shadow-core-zip-hoodie-3" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#2A2826" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Clean Warm Ivory Studio Background -->
+  <rect width="800" height="1066" fill="url(#studio-bg-core-zip-hoodie-3)" />
+
+  <!-- Studio Ambient Ground Reflection -->
+  <ellipse cx="400" cy="790" rx="200" ry="20" fill="#DDD6C9" opacity="0.45" filter="blur(6px)" />
+
+  <!-- Garment Presentation -->
+  <g filter="url(#soft-ground-shadow-core-zip-hoodie-3)">
+    
+      <!-- Hoodie / Crewneck Silhouette -->
+      <path d="M 275 320 L 350 280 L 450 280 L 525 320 L 600 450 L 540 480 L 505 425 L 495 735 L 305 735 L 295 425 L 260 480 L 200 450 Z" fill="#454340" />
+    
+    
+      
+        <!-- Hood Construction -->
+        <path d="M 345 285 Q 400 240 455 285 Q 400 325 345 285 Z" fill="#2B2927" opacity="0.75" />
+        <!-- Kangaroo Pocket -->
+        <path d="M 345 550 L 455 550 L 470 680 L 330 680 Z" stroke="#2B2927" stroke-width="2" fill="#2B2927" opacity="0.2" />
+        <!-- Zip Line -->
+        <line x1="400" y1="285" x2="400" y2="735" stroke="#77736C" stroke-width="2" opacity="0.6" />
+      
+      <!-- Hem and Cuff Ribbing -->
+      <rect x="305" y="715" width="190" height="20" fill="#2B2927" opacity="0.4" />
+      <path d="M 330 440 Q 360 520 350 710" stroke="#2B2927" stroke-width="2" opacity="0.35" fill="none" stroke-linecap="round" />
+      <path d="M 470 440 Q 440 520 450 710" stroke="#2B2927" stroke-width="2" opacity="0.35" fill="none" stroke-linecap="round" />
+    
+  </g>
+</svg>

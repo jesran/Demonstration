@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* DEMONSTATION Stitch Design System Tokens */
+  --demon-marble: #F9F9F8;       /* Primary canvas / gallery ground */
+  --demon-marble-light: #F3F4F3; /* Surface container low / studio backplates */
+  --demon-ivory: #EDEDEC;        /* Secondary surface */
+  --demon-stone: #E5E5E3;        /* Crisp 1px structural hairline */
+  --demon-muted: #767674;        /* Monolithic stone metadata */
+  --demon-charcoal: #1C1C1C;     /* Deep charcoal neutral */
+  --demon-black: #0D0D0D;        /* Primary deep black */
+  --demon-accent: #0D0D0D;       /* Interactive primary */
+
+  /* Easings */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+
+  /* Unified Two-Level Header Height */
+  --header-height: 108px;
+
+  /* Global Stitch Container System: 1440px centered, desktop 80px (5rem) margins */
+  --container-max-width: 1440px;
+  --container-padding: clamp(24px, 5.5vw, 80px);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-demon-marble: #F9F9F8;
+  --color-demon-marble-light: #F3F4F3;
+  --color-demon-ivory: #EDEDEC;
+  --color-demon-stone: #E5E5E3;
+  --color-demon-muted: #767674;
+  --color-demon-charcoal: #1C1C1C;
+  --color-demon-black: #0D0D0D;
+  --color-demon-accent: #0D0D0D;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0 !important; /* Strict 0px corner radius per Stitch design system */
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--demon-marble);
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--demon-marble);
+  color: var(--demon-black);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Unified Global Container Utility */
+.content-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Zero elevation globally — Stitch aesthetic relies solely on 1px borders & background tone shifts */
+*, *::before, *::after {
+  box-shadow: none !important;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--demon-black);
+  color: #F9F9F8;
+}
+
+/* Scrollbar — ultra-thin architectural line */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--demon-stone);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--demon-muted);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 1px solid var(--demon-black);
+  outline-offset: 2px;
+}
+
+/* Brand Typography Utilities */
+.text-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.text-heading {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
